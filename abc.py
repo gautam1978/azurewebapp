@@ -1,7 +1,11 @@
-def make_incrementor(n):
- return lambda x: x + n
-f = make_incrementor(42)
-print (f(0))
-print("hello")
-print (f(1))
-print("hey")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, World!"
+    
+if __name__ == "__main__":
+    app.run(debug=True)
+   
